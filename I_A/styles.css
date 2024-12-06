@@ -1,0 +1,186 @@
+:root {
+  --cor-fundo: #f0f4f8; /* Fundo claro (cinza muito suave) */
+  --cor-texto: #333333; /* Texto claro (preto suave) */
+  --cor-botao: #4a90e2; /* Botão (azul suave) */
+  --cor-botao-texto: white; /* Texto do botão (branco) */
+}
+
+[data-tema="escuro"] {
+  --cor-fundo: #1e1e1e; /* Fundo escuro (cinza escuro) */
+  --cor-texto: #e0e0e0; /* Texto escuro (cinza claro) */
+  --cor-botao: #4a90e2; /* Botão (azul suave) */
+  --cor-botao-texto: white; /* Texto do botão (branco) */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#chat-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--cor-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#chat-box {
+  height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+#chat-box div {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#chat-box .user {
+  text-align: right;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border: 1px solid #b2ebf2;
+}
+
+#chat-box .bot {
+  text-align: left;
+  background-color: #ffffff; /* Fundo branco para mensagens do bot */
+  color: var(--cor-texto);
+  border: 1px solid #ccc;
+}
+
+[data-tema="escuro"] #chat-box .user {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+}
+
+[data-tema="escuro"] #chat-box .bot {
+  background-color: #2a2a2a; /* Fundo escuro para mensagens do bot */
+  color: var(--cor-texto);
+  border: 1px solid #444;
+}
+
+#input-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+#user-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+#send-button {
+  width: 18%;
+  padding: 10px;
+  border: none;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-tema="escuro"] #send-button {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#botao-tema {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#botao-tema:hover {
+  opacity: 0.8;
+}
+
+#theme-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Largura do botão */
+  height: 34px; /* Altura do botão */
+}
+
+.switch input {
+  opacity: 0; /* Esconde o checkbox */
+  width: 0; /* Esconde o checkbox */
+  height: 0; /* Esconde o checkbox */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Cor do fundo do botão */
+  transition: .4s; /* Transição suave */
+  border-radius: 34px; /* Bordas arredondadas */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; /* Altura do círculo */
+  width: 26px; /* Largura do círculo */
+  left: 4px; /* Margem esquerda do círculo */
+  bottom: 4px; /* Margem inferior do círculo */
+  background-color: white; /* Cor do círculo */
+  transition: .4s; /* Transição suave */
+  border-radius: 50%; /* Círculo perfeito */
+}
+
+input:checked + .slider {
+  background-color: #2196F3; /* Cor do fundo quando ativado */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Move o círculo para a direita */
+}
+
+
+.copy-icon {
+  width: 20px; /* Tamanho padrão do ícone */
+  height: 20px; /* Tamanho padrão do ícone */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  margin-bottom: 5px; /* Espaçamento abaixo do ícone */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Transição suave */
+  opacity: 0.8; /* Opacidade padrão */
+}
+
+.copy-icon:hover {
+  transform: scale(1.1); /* Aumenta levemente o tamanho ao passar o mouse */
+  opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
